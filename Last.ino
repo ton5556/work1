@@ -7,7 +7,7 @@ SoftwareSerial pzemSerial(8, 9);  // Adjust pins as needed
 PZEM004Tv30 pzem(pzemSerial);
 
 // Define software serial for NB-IoT module (RX, TX)
-SoftwareSerial nbSerial(2, 3);  // Adjust pins as needed
+SoftwareSerial nbSerial(0, 1);  // Adjust pins as needed
 
 Magellan_BC95_lite magel;  // Magellan IoT object
 
