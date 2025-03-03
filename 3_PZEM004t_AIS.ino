@@ -11,6 +11,7 @@ PZEM004Tv30 pzem1(pzemSerial1);
 PZEM004Tv30 pzem2(pzemSerial2);
 PZEM004Tv30 pzem3(pzemSerial3);
 
+SoftwareSerial nbSerial(0,1);
 Magellan_BC95_lite magel;  
 
 // Struct to hold sensor data
@@ -30,6 +31,7 @@ void setup() {
   pzemSerial1.begin(9600);
   pzemSerial2.begin(9600);
   pzemSerial3.begin(9600);
+  nbSerial.begin(9600);
 
   Serial.println("Initializing Magellan IoT...");
   magel.begin();  // Initialize Magellan
@@ -90,5 +92,5 @@ void loop() {
     Serial.println("Failed to send data!");
   }
 
-  delay(60000);  // Send data every 60 seconds
+  delay(6000);  // Send data every 60 seconds
 }
